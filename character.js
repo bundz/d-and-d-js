@@ -7,14 +7,14 @@ export class Character {
   #wisdom;
   #charisma;
 
-  constructor(data) {
-    this.#name = data.name;
-    this.#strength = data.strength;
-    this.#dexterity = data.dexterity;
-    this.#constitution = data.constituition;
-    this.#intelligence = data.intelligence;
-    this.#wisdom = data.wisdom;
-    this.#charisma = data.charisma;
+  constructor(character) {
+    this.#name = character.name;
+    this.#strength = character.strength;
+    this.#dexterity = character.dexterity;
+    this.#constitution = character.constituition;
+    this.#intelligence = character.intelligence;
+    this.#wisdom = character.wisdom;
+    this.#charisma = character.charisma;
   }
 
   getName() {
@@ -46,6 +46,13 @@ export class Character {
   }
 
   sumAttributes() {
-    return this.#strength + this.#dexterity + this.#constitution + this.#intelligence + this.#wisdom + this.#charisma;
+    return (
+      this.#strength +
+      this.#dexterity +
+      this.#constitution +
+      this.#intelligence +
+      this.#wisdom +
+      this.#charisma
+    );
   }
 }
