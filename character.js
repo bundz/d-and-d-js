@@ -1,22 +1,31 @@
+import { Dice } from "./dice.js";
 export class Character {
   #name;
   #race;
+  #class;
+  #level;
+  #hp;
   #strength;
   #dexterity;
   #constitution;
   #intelligence;
   #wisdom;
   #charisma;
+  #speed;
 
   constructor(character) {
-    this.#race = character.race;
     this.#name = character.name;
+    this.#race = character.race;
+    this.#class = character.class;
+    this.#level = character.level;
     this.#strength = character.strength + this.#race.getTrait("strength");
     this.#dexterity = character.dexterity + this.#race.getTrait("dexterity");
     this.#constitution = character.constituition + this.#race.getTrait("constituition");
     this.#intelligence = character.intelligence + this.#race.getTrait("intelligence");
     this.#wisdom = character.wisdom + this.#race.getTrait("wisdom");
     this.#charisma = character.charisma + this.#race.getTrait("charisma");
+    this.#speed = this.#race.getTrait("speed");
+    this.#setInitialHp();
   }
 
   getName() {
@@ -25,6 +34,33 @@ export class Character {
 
   getRace() {
     return this.#race;
+  }
+
+  getClass() {
+    return this.#class;
+  }
+
+  getLevel() {
+    return this.#level;
+  }
+
+  getHp() {
+    return this.#hp;
+  }
+
+  #setInitialHp() {
+    const dice = new Dice(this.#class.getHitDie());
+    this.#hp = this.#class.getHitDie() + this.getConstituitionModifier();
+
+    for (let i = 1; i < this.#level; i++) {
+      let hpRolled = dice.roll();
+
+      if (hpRolled < 7) {
+        hpRolled = 7;
+      }
+
+      this.#hp = this.#hp + hpRolled + this.getConstituitionModifier();
+    }
   }
 
   getStrength() {
@@ -53,6 +89,10 @@ export class Character {
 
   getCharisma() {
     return this.#charisma;
+  }
+
+  getSpeed() {
+    return this.#speed;
   }
 
   getModifier(attribute) {

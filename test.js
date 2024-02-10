@@ -1,12 +1,15 @@
 import { Dice } from "./dice.js";
 import { Character } from "./character.js";
 import { Dwarf } from "./races/dwarf.js";
+import { Barbarian } from "./classes/barbarian.js";
 
 const dice = new Dice(20);
 
 const data = {
   name: "Dedão",
   race: new Dwarf(),
+  class: new Barbarian(),
+  level: 1,
   strength: dice.roll(),
   dexterity: dice.roll(),
   constituition: dice.roll(),
@@ -21,6 +24,9 @@ console.log(`
 ---------- FICHA -----------
 ${character.getName()}
 Race:          ${character.getRace().getName()}
+Class:         ${character.getClass().getName()}
+Level:         ${character.getLevel()}
+Hp:            ${character.getHp()}
 Strength:      ${character.getStrength()}
 Dexterity:     ${character.getDexterity()}
 Constituition: ${character.getConstituition()}

@@ -3,13 +3,7 @@ import { Race } from "./race.js";
 export class Dwarf extends Race {
   constructor() {
     super("Dwarf");
-  }
-
-  getTrait(attribute) {
-    if (attribute == "constituition") {
-      return 2;
-    }
-
-    return 0;
+    this.setTrait("constituition", 2);
+    this.setTrait("speed", 25);
   }
 }
