@@ -1,4 +1,4 @@
-import { Dice } from "./dice.js";
+import { Dice } from "./utils/dice.js";
 export class Character {
   #name;
   #race;
@@ -12,6 +12,7 @@ export class Character {
   #wisdom;
   #charisma;
   #speed;
+  #gold;
 
   constructor(character) {
     this.#name = character.name;
@@ -25,7 +26,12 @@ export class Character {
     this.#wisdom = character.wisdom + this.#race.getTrait("wisdom");
     this.#charisma = character.charisma + this.#race.getTrait("charisma");
     this.#speed = this.#race.getTrait("speed");
+    this.#gold = character.gold;
     this.#setInitialHp();
+  }
+
+  get name() {
+    return this.#name;
   }
 
   getName() {
@@ -93,6 +99,10 @@ export class Character {
 
   getSpeed() {
     return this.#speed;
+  }
+
+  get gold() {
+    return this.#gold;
   }
 
   getModifier(attribute) {

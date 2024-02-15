@@ -1,4 +1,4 @@
-import { Dice } from "./dice.js";
+import { Dice } from "./utils/dice.js";
 import { Character } from "./character.js";
 import { Dwarf } from "./races/dwarf.js";
 import { Barbarian } from "./classes/barbarian.js";
@@ -16,6 +16,7 @@ const data = {
   intelligence: dice.roll(),
   wisdom: dice.roll(),
   charisma: dice.roll(),
+  gold: 4000,
 };
 
 const character = new Character(data);

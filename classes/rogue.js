@@ -1,7 +1,11 @@
 import { ClassTemplate } from "./classTemplate.js";
 
-export class Rougue extends ClassTemplate {
+export class Rogue extends ClassTemplate {
   constructor() {
-    super("Barbarian", 8);
+    super("Rogue", 8);
+  }
+
+  get startingWealth() {
+    return "4d4";
   }
 }
