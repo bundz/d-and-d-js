@@ -1,7 +1,7 @@
 import { STEALTH_STATUS } from "../consts.js";
 import { ARMOR_TYPE } from "../consts.js";
 
-export const ARMOR = {
+export const ARMOR_DATA = {
   PADDED: {
     name: "Padded",
     type: ARMOR_TYPE.LIGHT_ARMOR,
@@ -9,7 +9,7 @@ export const ARMOR = {
     armorClass: 11,
     strengthRequired: 0,
     stealthStatus: STEALTH_STATUS.DISADVANTAGE,
-    weigth: 8,
+    weight: 8,
   },
 
   LEATHER: {
@@ -19,7 +19,7 @@ export const ARMOR = {
     armorClass: 11,
     strengthRequired: 0,
     stealthStatus: STEALTH_STATUS.NEUTRAL,
-    weigth: 10,
+    weight: 10,
   },
 
   STUDDED_LEATHER: {
@@ -29,17 +29,17 @@ export const ARMOR = {
     armorClass: 12,
     strengthRequired: 0,
     stealthStatus: STEALTH_STATUS.DISADVANTAGE,
-    weigth: 13,
+    weight: 13,
   },
 
-  Hide: {
+  HIDE: {
     name: "Leather",
     type: ARMOR_TYPE.MEDIUM_ARMOR,
     price: "10gp",
     armorClass: 12,
     strengthRequired: 0,
     stealthStatus: STEALTH_STATUS.NEUTRAL,
-    weigth: 12,
+    weight: 12,
   },
 
   CHAIN_SHIRT: {
@@ -49,7 +49,7 @@ export const ARMOR = {
     armorClass: 13,
     strengthRequired: 0,
     stealthStatus: STEALTH_STATUS.NEUTRAL,
-    weigth: 20,
+    weight: 20,
   },
 
   SCALE_MAIL: {
@@ -59,7 +59,7 @@ export const ARMOR = {
     armorClass: 14,
     strengthRequired: 0,
     stealthStatus: STEALTH_STATUS.DISADVANTAGE,
-    weigth: 45,
+    weight: 45,
   },
 
   BREASTPLATE: {
@@ -69,7 +69,7 @@ export const ARMOR = {
     armorClass: 14,
     strengthRequired: 0,
     stealthStatus: STEALTH_STATUS.NEUTRAL,
-    weigth: 20,
+    weight: 20,
   },
 
   HALF_PLATE: {
@@ -79,7 +79,7 @@ export const ARMOR = {
     armorClass: 15,
     strengthRequired: 0,
     stealthStatus: STEALTH_STATUS.DISADVANTAGE,
-    weigth: 40,
+    weight: 40,
   },
 
   RING_MAIL: {
@@ -89,7 +89,7 @@ export const ARMOR = {
     armorClass: 14,
     strengthRequired: 0,
     stealthStatus: STEALTH_STATUS.DISADVANTAGE,
-    weigth: 40,
+    weight: 40,
   },
   CHAIN_MAIL: {
     name: "Chain Mail",
@@ -98,7 +98,7 @@ export const ARMOR = {
     armorClass: 16,
     strengthRequired: 13,
     stealthStatus: STEALTH_STATUS.DISADVANTAGE,
-    weigth: 55,
+    weight: 55,
   },
   SPLINT: {
     name: "Splint",
@@ -107,7 +107,7 @@ export const ARMOR = {
     armorClass: 17,
     strengthRequired: 15,
     stealthStatus: STEALTH_STATUS.DISADVANTAGE,
-    weigth: 60,
+    weight: 60,
   },
   PLATE: {
     name: "Plate",
@@ -116,6 +116,6 @@ export const ARMOR = {
     armorClass: 18,
     strengthRequired: 15,
     stealthStatus: STEALTH_STATUS.DISADVANTAGE,
-    weigth: 65,
+    weight: 65,
   },
 };

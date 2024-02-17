@@ -1,6 +1,7 @@
 import { Equipment } from "./equipment.js";
+import { ARMOR_DATA } from "../data/armors.js";
 
-export class Armor {
+export class Armor extends Equipment {
   #type;
   #armorClass;
   #maxDexterityModifier;
@@ -37,4 +38,8 @@ export class Armor {
   }
 }
 
-const armor = new Armor({ name: "Padded", type: "Light Armor", price: "5gp", armorClass: 11, strengthRequired: 0, stealthStatus: "disadvantage" });
+const armor = new Armor(ARMOR_DATA.PADDED);
+
+console.log(armor.name);
+console.log(armor.armorClass);
+console.log(armor.type);

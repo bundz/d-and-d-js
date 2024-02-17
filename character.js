@@ -13,6 +13,7 @@ export class Character {
   #charisma;
   #speed;
   #gold;
+  #equipments = [];
 
   constructor(character) {
     this.#name = character.name;
@@ -27,6 +28,11 @@ export class Character {
     this.#charisma = character.charisma + this.#race.getTrait("charisma");
     this.#speed = this.#race.getTrait("speed");
     this.#gold = character.gold;
+
+    if (character.equipments) {
+      this.#equipments = character.equipments;
+    }
+
     this.#setInitialHp();
   }
 
@@ -135,5 +141,28 @@ export class Character {
 
   get carringCapacity() {
     return this.#strength * 15;
+  }
+
+  get equipments() {
+    return this.#equipments;
+  }
+
+  get totalCarryingWeight() {
+    let totalWeight = 0;
+
+    for (const equipment of this.#equipments) {
+      totalWeight = totalWeight + equipment.weight;
+    }
+
+    return totalWeight;
+  }
+
+  addEquipment(equipment) {
+    if (this.totalCarryingWeight + equipment.weight > this.carringCapacity) {
+      return false;
+    }
+
+    this.#equipments.push(equipment);
+    return true;
   }
 }
