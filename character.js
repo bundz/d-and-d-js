@@ -132,4 +132,8 @@ export class Character {
   getCharismaModifier() {
     return this.getModifier(this.#charisma);
   }
+
+  get carringCapacity() {
+    return this.#strength * 15;
+  }
 }
